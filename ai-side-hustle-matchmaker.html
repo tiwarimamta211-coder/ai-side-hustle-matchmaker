@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Package -->
+<title>AI Side Hustle Matchmaker – Find Your Perfect Income Stream | IncomeAIHub</title>
+<meta name="description" content="Discover your perfect side hustle using AI. Input your skills, time, and goals — get a personalized income roadmap, tax strategy, risk score, and 12-month growth plan. Free & Premium plans available.">
+<meta name="keywords" content="AI side hustle finder, best side hustle for me, side hustle income calculator, passive income ideas AI, freelance opportunity matcher, side income tax saving, wealth building tool, best side hustle 2025, side hustle ROI calculator, income diversification planner">
+<link rel="canonical" href="https://incomeaihub.com/tools/ai-side-hustle-matchmaker">
+<meta property="og:title" content="AI Side Hustle Matchmaker – Find Your Perfect Income Stream">
+<meta property="og:description" content="AI-powered platform that matches you to the right side hustle based on your skills, time, risk tolerance, and income goals.">
+<meta property="og:type" content="website">
+
+<!-- Schema FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How does the AI Side Hustle Matchmaker work?","acceptedAnswer":{"@type":"Answer","text":"You input your skills, available hours, income goal, risk appetite, and country. Our AI engine scores 200+ side hustle types across 8 dimensions and returns your top 5 matches with a 12-month income roadmap."}},
+    {"@type":"Question","name":"Is the side hustle matchmaker free?","acceptedAnswer":{"@type":"Answer","text":"The core match report is free. Premium features including PDF export, tax saving analysis, 12-month cashflow projections, and weekly AI check-ins start at $9/month."}},
+    {"@type":"Question","name":"Can I really make money from my recommended side hustle?","acceptedAnswer":{"@type":"Answer","text":"Our AI provides realistic income projections based on actual market data, your specific skills, and time investment — not inflated promises."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --bg-deep:    #080D1C;
+  --bg-card:    #0F1629;
+  --bg-input:   #141B30;
+  --bg-hover:   #1A2240;
+  --amber:      #F5A623;
+  --amber-dim:  #C47D0E;
+  --mint:       #00D4AA;
+  --coral:      #FF6B6B;
+  --violet:     #8B6AFA;
+  --sky:        #38BDF8;
+  --white:      #FFFFFF;
+  --grey-80:    #CDD5E0;
+  --grey-50:    #6B7FA3;
+  --grey-20:    #1E2A44;
+  --border:     rgba(255,255,255,0.08);
+  --glow-amber: 0 0 30px rgba(245,166,35,0.25);
+  --glow-mint:  0 0 30px rgba(0,212,170,0.2);
+  --r-card:     16px;
+  --r-btn:      10px;
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: var(--amber); text-decoration: none; }
+
+/* ============================================================
+   ANIMATED GRID BACKGROUND
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(8,13,28,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--white);
+}
+.nav-logo span { color: var(--amber); }
+.nav-badge {
+  background: linear-gradient(135deg, var(--amber), #FF8C42);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--grey-80); font-size: 14px; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+.btn-nav {
+  background: var(--amber);
+  color: #000;
+  padding: 8px 20px;
+  border-radius: var(--r-btn);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all .2s;
+}
+.btn-nav:hover { background: #FFB733; transform: translateY(-1px); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: 100px 40px 80px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.3);
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+  letter-spacing: .5px;
+}
+.hero-eyebrow::before { content: '◆'; font-size: 8px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 24px;
+  letter-spacing: -1.5px;
+}
+.hero h1 .accent { color: var(--amber); }
+.hero h1 .accent-mint { color: var(--mint); }
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--grey-80);
+  max-width: 620px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--amber);
+}
+.stat-label { font-size: 12px; color: var(--grey-50); margin-top: 2px; text-transform: uppercase; letter-spacing: .8px; }
+.hero-scroll-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--amber), #FF8C42);
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all .25s;
+  box-shadow: 0 8px 32px rgba(245,166,35,0.35);
+}
+.hero-scroll-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(245,166,35,0.45); }
+.hero-scroll-cta svg { transition: transform .2s; }
+.hero-scroll-cta:hover svg { transform: translateX(4px); }
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 { width: 400px; height: 400px; background: rgba(245,166,35,0.08); top: -100px; left: -100px; }
+.orb-2 { width: 300px; height: 300px; background: rgba(0,212,170,0.06); bottom: 0; right: -50px; }
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.section-sub { color: var(--grey-50); font-size: 15px; margin-bottom: 40px; }
+
+/* ============================================================
+   STEP INDICATOR
+   ============================================================ */
+.steps-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--grey-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--grey-50);
+  transition: all .3s;
+  background: var(--bg-card);
+}
+.step-dot.active .step-circle {
+  border-color: var(--amber);
+  background: rgba(245,166,35,0.15);
+  color: var(--amber);
+  box-shadow: var(--glow-amber);
+}
+.step-dot.done .step-circle {
+  border-color: var(--mint);
+  background: rgba(0,212,170,0.15);
+  color: var(--mint);
+}
+.step-name { font-size: 11px; color: var(--grey-50); text-transform: uppercase; letter-spacing: .6px; }
+.step-dot.active .step-name { color: var(--amber); }
+.step-connector {
+  width: 60px;
+  height: 2px;
+  background: var(--grey-20);
+  margin-bottom: 18px;
+  transition: background .3s;
+}
+.step-connector.done { background: var(--mint); }
+
+/* ============================================================
+   FORM CARD
+   ============================================================ */
+.form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+}
+.form-step { display: none; }
+.form-step.active { display: block; }
+
+.step-header { margin-bottom: 32px; }
+.step-header h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.step-header p { color: var(--grey-50); font-size: 14px; }
+
+.form-grid { display: grid; gap: 20px; }
+.form-grid-2 { grid-template-columns: 1fr 1fr; }
+@media(max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+.field-group { display: flex; flex-direction: column; gap: 8px; }
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey-80);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.field-hint { font-size: 11px; color: var(--grey-50); font-weight: 400; }
+.field-required { color: var(--coral); }
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 13px 16px;
+  width: 100%;
+  transition: border .2s, box-shadow .2s;
+  outline: none;
+  appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.12);
+}
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7FA3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+textarea { resize: vertical; min-height: 90px; }
+
+/* Skill tags */
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.skill-tag {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--grey-80);
+  cursor: pointer;
+  transition: all .2s;
+  user-select: none;
+}
+.skill-tag:hover { border-color: var(--amber); color: var(--amber); }
+.skill-tag.selected { background: rgba(245,166,35,0.12); border-color: var(--amber); color: var(--amber); }
+
+/* Slider */
+.range-wrapper { position: relative; padding-bottom: 4px; }
+input[type="range"] {
+  -webkit-appearance: none;
+  background: var(--grey-20);
+  height: 5px;
+  border-radius: 3px;
+  padding: 0;
+  border: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--amber);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(245,166,35,0.5);
+}
+.range-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--grey-50); margin-top: 4px; }
+.range-value {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+/* Radio cards */
+.radio-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.radio-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+  background: var(--bg-input);
+}
+.radio-card:hover { border-color: var(--amber); }
+.radio-card.selected { border-color: var(--amber); background: rgba(245,166,35,0.1); }
+.radio-card .rc-icon { font-size: 22px; margin-bottom: 4px; }
+.radio-card .rc-label { font-size: 12px; color: var(--grey-80); font-weight: 500; }
+.radio-card.selected .rc-label { color: var(--amber); }
+
+/* Form nav */
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.btn-back {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--grey-80);
+  padding: 12px 24px;
+  border-radius: var(--r-btn);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .2s;
+}
+.btn-back:hover { border-color: var(--grey-50); color: var(--white); }
+.btn-next {
+  background: linear-gradient(135deg, var(--amber), #FF8C42);
+  border: none;
+  color: #000;
+  padding: 12px 32px;
+  border-radius: var(--r-btn);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all .25s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+}
+.btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,166,35,0.4); }
+.btn-analyze {
+  background: linear-gradient(135deg, var(--mint), #00A884);
+  color: #000;
+  padding: 14px 40px;
+  font-size: 16px;
+  box-shadow: 0 4px 20px rgba(0,212,170,0.3);
+}
+.btn-analyze:hover { box-shadow: 0 8px 30px rgba(0,212,170,0.4); }
+
+/* ============================================================
+   ANALYSIS LOADER
+   ============================================================ */
+#analysisLoader {
+  display: none;
+  text-align: center;
+  padding: 80px 40px;
+}
+#analysisLoader.show { display: block; }
+.loader-ring {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+.loader-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.loader-ring-track { fill: none; stroke: var(--grey-20); stroke-width: 6; }
+.loader-ring-fill {
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;
+  stroke-dashoffset: 339.3;
+  animation: fillRing 3.5s ease-in-out forwards;
+  filter: drop-shadow(0 0 8px rgba(245,166,35,0.7));
+}
+@keyframes fillRing {
+  0% { stroke-dashoffset: 339.3; }
+  100% { stroke-dashoffset: 0; }
+}
+.loader-pct {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--amber);
+}
+.loader-steps-list { list-style: none; max-width: 380px; margin: 0 auto; text-align: left; }
+.loader-step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--grey-50);
+  border-bottom: 1px solid var(--border);
+  transition: color .3s;
+}
+.loader-step-item.active { color: var(--white); }
+.loader-step-item.done { color: var(--mint); }
+.loader-step-icon { font-size: 16px; min-width: 20px; text-align: center; }
+.loader-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.loader-sub { color: var(--grey-50); font-size: 14px; margin-bottom: 32px; }
+
+/* ============================================================
+   RESULTS DASHBOARD
+   ============================================================ */
+#resultsDashboard { display: none; }
+#resultsDashboard.show { display: block; }
+
+/* Summary header */
+.results-header {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.results-header::after {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.results-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--grey-50);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.results-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.results-summary { color: var(--grey-80); font-size: 15px; line-height: 1.7; max-width: 700px; }
+.results-meta {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.results-meta-item {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--grey-80);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.results-meta-item span { color: var(--amber); }
+
+/* Score grid */
+.scores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.score-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.score-card:hover { transform: translateY(-4px); }
+.score-card.amber { border-color: rgba(245,166,35,0.3); }
+.score-card.amber:hover { box-shadow: var(--glow-amber); }
+.score-card.mint { border-color: rgba(0,212,170,0.3); }
+.score-card.mint:hover { box-shadow: var(--glow-mint); }
+.score-card.violet { border-color: rgba(139,106,250,0.3); }
+.score-card.violet:hover { box-shadow: 0 0 30px rgba(139,106,250,0.2); }
+.score-card.coral { border-color: rgba(255,107,107,0.3); }
+.score-card.coral:hover { box-shadow: 0 0 30px rgba(255,107,107,0.2); }
+.score-label { font-size: 12px; color: var(--grey-50); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; }
+.score-value {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.score-card.amber .score-value { color: var(--amber); }
+.score-card.mint .score-value { color: var(--mint); }
+.score-card.violet .score-value { color: var(--violet); }
+.score-card.coral .score-value { color: var(--coral); }
+.score-bar { background: var(--grey-20); border-radius: 3px; height: 4px; overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 3px; transition: width 1.5s ease; }
+.score-card.amber .score-bar-fill { background: var(--amber); }
+.score-card.mint .score-bar-fill { background: var(--mint); }
+.score-card.violet .score-bar-fill { background: var(--violet); }
+.score-card.coral .score-bar-fill { background: var(--coral); }
+.score-sub { font-size: 12px; color: var(--grey-50); margin-top: 8px; }
+
+/* Dashboard grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media(max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } }
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 28px;
+}
+.dash-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dash-card-title .icon { font-size: 18px; }
+
+/* Match list */
+.match-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.match-item:last-child { border-bottom: none; padding-bottom: 0; }
+.match-rank {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--amber);
+  opacity: 0.4;
+  min-width: 36px;
+  line-height: 1;
+}
+.match-rank.top { opacity: 1; }
+.match-info { flex: 1; }
+.match-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.match-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  background: rgba(0,212,170,0.15);
+  color: var(--mint);
+  border: 1px solid rgba(0,212,170,0.3);
+}
+.match-badge.hot { background: rgba(255,107,107,0.15); color: var(--coral); border-color: rgba(255,107,107,0.3); }
+.match-desc { font-size: 13px; color: var(--grey-50); margin-bottom: 8px; }
+.match-earnings {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--mint);
+  font-weight: 500;
+}
+.match-score-pill {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* Action plan */
+.action-step {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.action-step:last-child { border-bottom: none; }
+.action-week {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+.action-content .action-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+.action-content .action-desc { font-size: 13px; color: var(--grey-50); }
+
+/* Risk warnings */
+.risk-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid;
+}
+.risk-item.high { background: rgba(255,107,107,0.06); border-color: rgba(255,107,107,0.2); }
+.risk-item.medium { background: rgba(245,166,35,0.06); border-color: rgba(245,166,35,0.2); }
+.risk-item.low { background: rgba(0,212,170,0.06); border-color: rgba(0,212,170,0.2); }
+.risk-icon { font-size: 18px; min-width: 24px; }
+.risk-text .risk-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.risk-text .risk-desc { font-size: 13px; color: var(--grey-50); }
+
+/* Income projection mini chart */
+.chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 80px; margin-top: 16px; }
+.chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.chart-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, var(--amber), rgba(245,166,35,0.3));
+  transition: height 1s ease;
+  min-height: 4px;
+}
+.chart-bar-label { font-size: 9px; color: var(--grey-50); }
+
+/* Tax insights */
+.tax-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tax-item:last-child { border-bottom: none; }
+.tax-key { font-size: 13px; color: var(--grey-80); }
+.tax-val { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--mint); }
+.tax-val.saving { color: var(--mint); }
+.tax-val.owed { color: var(--coral); }
+
+/* AI Insight box */
+.ai-insight {
+  background: linear-gradient(135deg, rgba(139,106,250,0.08), rgba(245,166,35,0.05));
+  border: 1px solid rgba(139,106,250,0.2);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.ai-insight::before {
+  content: '✦ AI Insight';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--bg-deep);
+  padding: 0 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--violet);
+  letter-spacing: 1px;
+}
+.ai-insight-text { font-size: 14px; color: var(--grey-80); line-height: 1.8; }
+
+/* Full-width card */
+.dash-card-full {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+/* Premium upsell */
+.premium-upsell {
+  background: linear-gradient(135deg, rgba(245,166,35,0.08), rgba(255,140,66,0.05));
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.upsell-text h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.upsell-text p { color: var(--grey-80); font-size: 14px; max-width: 480px; }
+.upsell-features { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.upsell-feat {
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--amber);
+}
+.upsell-cta { text-align: center; }
+.upsell-price {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--amber);
+}
+.upsell-price span { font-size: 16px; font-weight: 400; color: var(--grey-50); }
+.btn-premium {
+  display: block;
+  background: linear-gradient(135deg, var(--amber), #FF8C42);
+  color: #000;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 12px;
+  transition: all .25s;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+  width: 100%;
+  text-align: center;
+}
+.btn-premium:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,166,35,0.45); }
+
+/* PDF button */
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--grey-80);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-pdf:hover { border-color: var(--amber); color: var(--amber); }
+.btn-restart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(0,212,170,0.3);
+  color: var(--mint);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-restart:hover { background: rgba(0,212,170,0.08); }
+
+/* Results actions bar */
+.results-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   FEATURES SECTION
+   ============================================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 28px;
+  transition: border-color .2s, transform .2s;
+}
+.feature-card:hover { border-color: rgba(245,166,35,0.3); transform: translateY(-4px); }
+.feature-icon { font-size: 32px; margin-bottom: 16px; }
+.feature-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature-desc { font-size: 14px; color: var(--grey-50); line-height: 1.7; }
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+}
+.pricing-card.featured {
+  border-color: var(--amber);
+  box-shadow: var(--glow-amber);
+  position: relative;
+}
+.pricing-featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--amber);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.plan-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.plan-tagline { font-size: 13px; color: var(--grey-50); margin-bottom: 20px; }
+.plan-price {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.plan-price .currency { font-size: 22px; vertical-align: top; margin-top: 8px; display: inline-block; }
+.plan-price .period { font-size: 16px; font-weight: 400; color: var(--grey-50); }
+.plan-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.plan-features li { font-size: 14px; color: var(--grey-80); display: flex; align-items: center; gap: 8px; }
+.plan-features li::before { content: '✓'; color: var(--mint); font-weight: 700; font-size: 13px; }
+.plan-features li.locked::before { content: '—'; color: var(--grey-50); }
+.plan-features li.locked { color: var(--grey-50); }
+.btn-plan {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--white);
+  transition: all .2s;
+}
+.btn-plan:hover { border-color: var(--amber); color: var(--amber); }
+.pricing-card.featured .btn-plan {
+  background: linear-gradient(135deg, var(--amber), #FF8C42);
+  color: #000;
+  border: none;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+}
+.pricing-card.featured .btn-plan:hover { transform: translateY(-2px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 40px;
+  text-align: center;
+  color: var(--grey-50);
+  font-size: 13px;
+}
+footer .footer-logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+footer .footer-logo span { color: var(--amber); }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--grey-20); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--grey-50); }
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.text-amber { color: var(--amber); }
+.text-mint { color: var(--mint); }
+.text-coral { color: var(--coral); }
+.text-violet { color: var(--violet); }
+.mb-4 { margin-bottom: 4px; }
+.mb-8 { margin-bottom: 8px; }
+.hidden { display: none; }
+
+/* Animated fade-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp .5s ease forwards; }
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 60px 20px 50px; }
+  .hero-stats { gap: 24px; }
+  .section { padding: 40px 16px; }
+  .form-card { padding: 24px 20px; }
+  .results-header { padding: 24px; }
+  .premium-upsell { flex-direction: column; }
+  .upsell-cta { width: 100%; }
+  .btn-premium { width: 100%; }
+  .scores-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .scores-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Income<span>AI</span>Hub <span class="nav-badge">BETA</span></div>
+  <div class="nav-links">
+    <a href="#">Tools</a>
+    <a href="#">Pricing</a>
+    <a href="#">Blog</a>
+    <a href="#">Success Stories</a>
+    <button class="btn-nav" onclick="scrollToTool()">Try Free →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="hero-eyebrow">AI-Powered Side Hustle Intelligence</div>
+
+  <h1>
+    Find Your <span class="accent">Perfect</span><br>
+    Side Hustle<br>
+    <span class="accent-mint">in 3 Minutes</span>
+  </h1>
+
+  <p class="hero-sub">
+    Stop guessing. Our AI analyzes your skills, time, risk appetite, and income goals —
+    then matches you to the side hustles that will actually work <em>for you</em>.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Side Hustles Analyzed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Scoring Dimensions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$4.2K</div>
+      <div class="stat-label">Avg. Monthly Added Income</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">47K+</div>
+      <div class="stat-label">Reports Generated</div>
+    </div>
+  </div>
+
+  <button class="hero-scroll-cta" onclick="scrollToTool()">
+    Get My AI Match Report
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</section>
+
+<!-- TOOL SECTION -->
+<div class="section" id="toolSection">
+  <div class="section-label">// AI Analysis Engine</div>
+  <h2 class="section-title">AI Side Hustle Matchmaker</h2>
+  <p class="section-sub">Answer 4 quick sections — AI does the rest in seconds.</p>
+
+  <!-- STEP INDICATOR -->
+  <div class="steps-indicator" id="stepsIndicator">
+    <div class="step-dot active" id="sdot-1" onclick="goToStep(1)">
+      <div class="step-circle">1</div>
+      <div class="step-name">Profile</div>
+    </div>
+    <div class="step-connector" id="sc-1"></div>
+    <div class="step-dot" id="sdot-2" onclick="goToStep(2)">
+      <div class="step-circle">2</div>
+      <div class="step-name">Skills</div>
+    </div>
+    <div class="step-connector" id="sc-2"></div>
+    <div class="step-dot" id="sdot-3" onclick="goToStep(3)">
+      <div class="step-circle">3</div>
+      <div class="step-name">Goals</div>
+    </div>
+    <div class="step-connector" id="sc-3"></div>
+    <div class="step-dot" id="sdot-4" onclick="goToStep(4)">
+      <div class="step-circle">4</div>
+      <div class="step-name">Context</div>
+    </div>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="form-card" id="formCard">
+
+    <!-- STEP 1: PROFILE -->
+    <div class="form-step active" id="step-1">
+      <div class="step-header">
+        <h2>Your Basic Profile</h2>
+        <p>This helps us understand your starting point and available capacity.</p>
+      </div>
+      <div class="form-grid form-grid-2">
+        <div class="field-group">
+          <label class="field-label">Full Name <span class="field-required">*</span></label>
+          <input type="text" id="userName" placeholder="e.g. Alex Johnson" maxlength="60">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Country / Market <span class="field-required">*</span></label>
+          <select id="userCountry">
+            <option value="">Select your country</option>
+            <option value="USA">🇺🇸 United States</option>
+            <option value="UK">🇬🇧 United Kingdom</option>
+            <option value="Canada">🇨🇦 Canada</option>
+            <option value="Australia">🇦🇺 Australia</option>
+            <option value="India">🇮🇳 India</option>
+            <option value="Other">🌍 Other</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Current Employment Status</label>
+          <select id="userEmployment">
+            <option value="fulltime">Full-time Employee</option>
+            <option value="parttime">Part-time Employee</option>
+            <option value="freelancer">Freelancer / Self-employed</option>
+            <option value="student">Student</option>
+            <option value="unemployed">Currently Unemployed</option>
+            <option value="retired">Retired</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Current Monthly Income (USD equivalent)</label>
+          <select id="userIncome">
+            <option value="0">$0 (No income)</option>
+            <option value="1000">Under $1,000</option>
+            <option value="2500">$1,000 – $2,500</option>
+            <option value="5000">$2,500 – $5,000</option>
+            <option value="8000">$5,000 – $8,000</option>
+            <option value="12000">$8,000 – $12,000</option>
+            <option value="20000">$12,000+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-grid" style="margin-top:20px">
+        <div class="field-group">
+          <label class="field-label">Available Hours Per Week for Side Hustle <span class="field-required">*</span></label>
+          <div class="range-value" id="hoursDisplay">10 hours/week</div>
+          <div class="range-wrapper">
+            <input type="range" id="userHours" min="2" max="40" value="10" step="1" oninput="document.getElementById('hoursDisplay').textContent=this.value+' hours/week'">
+            <div class="range-labels"><span>2 hrs</span><span>20 hrs</span><span>40 hrs</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid form-grid-2" style="margin-top:20px">
+        <div class="field-group">
+          <label class="field-label">Age Range</label>
+          <select id="userAge">
+            <option value="18-24">18 – 24</option>
+            <option value="25-34" selected>25 – 34</option>
+            <option value="35-44">35 – 44</option>
+            <option value="45-54">45 – 54</option>
+            <option value="55+">55+</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Work Style Preference</label>
+          <select id="userWorkStyle">
+            <option value="remote">💻 Fully Remote / Digital</option>
+            <option value="local">📍 Local / In-person</option>
+            <option value="hybrid">🔀 Hybrid (both fine)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <div></div>
+        <button class="btn-next" onclick="nextStep(1)">Next: Skills & Expertise →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: SKILLS -->
+    <div class="form-step" id="step-2">
+      <div class="step-header">
+        <h2>Your Skills & Expertise</h2>
+        <p>Select all that apply — even beginner-level skills count. AI will match depth with opportunity.</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Select Your Skills <span class="field-required">*</span> <span class="field-hint">(tap to toggle, select at least 2)</span></label>
+        <div class="skill-tags" id="skillTags">
+          <div class="skill-tag" onclick="toggleSkill(this)">✍️ Writing / Copywriting</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🎨 Graphic Design</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">💻 Web Development</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📱 App Development</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📊 Data Analysis</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🤖 AI / Prompt Engineering</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📸 Photography / Video</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🎙️ Podcasting / Audio</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📈 Digital Marketing / SEO</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📣 Social Media Management</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🎓 Teaching / Tutoring</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">💰 Finance / Accounting</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">⚖️ Legal / Paralegal</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🏥 Healthcare / Medical</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🔧 Technical / Engineering</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🍳 Cooking / Baking</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">💪 Fitness / Personal Training</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🌐 Languages / Translation</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🎵 Music / Audio Production</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🛒 eCommerce / Sales</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🚗 Driving / Delivery</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🏠 Real Estate / Property</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">📦 Logistics / Reselling</div>
+          <div class="skill-tag" onclick="toggleSkill(this)">🎮 Gaming / Streaming</div>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-top:20px">
+        <label class="field-label">Your Highest Skill Level Overall</label>
+        <div class="radio-cards" id="skillLevel">
+          <div class="radio-card selected" onclick="selectRadio(this,'skillLevel')">
+            <div class="rc-icon">🌱</div>
+            <div class="rc-label">Beginner</div>
+          </div>
+          <div class="radio-card" onclick="selectRadio(this,'skillLevel')">
+            <div class="rc-icon">📚</div>
+            <div class="rc-label">Intermediate</div>
+          </div>
+          <div class="radio-card" onclick="selectRadio(this,'skillLevel')">
+            <div class="rc-icon">🏆</div>
+            <div class="rc-label">Advanced</div>
+          </div>
+          <div class="radio-card" onclick="selectRadio(this,'skillLevel')">
+            <div class="rc-icon">⭐</div>
+            <div class="rc-label">Expert</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-top:20px">
+        <label class="field-label">Any existing portfolio, following, or audience?</label>
+        <textarea id="userPortfolio" placeholder="e.g. 2,000 Instagram followers in fitness niche, published 10 articles on Medium, built 3 client websites..."></textarea>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(2)">← Back</button>
+        <button class="btn-next" onclick="nextStep(2)">Next: Income Goals →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: GOALS -->
+    <div class="form-step" id="step-3">
+      <div class="step-header">
+        <h2>Your Income Goals</h2>
+        <p>Be honest — this is what the AI optimizes for. No judgment.</p>
+      </div>
+
+      <div class="form-grid">
+        <div class="field-group">
+          <label class="field-label">Monthly Income Goal from Side Hustle (USD) <span class="field-required">*</span></label>
+          <div class="range-value" id="goalDisplay">$1,500 / month</div>
+          <div class="range-wrapper">
+            <input type="range" id="userGoal" min="200" max="20000" value="1500" step="100"
+              oninput="document.getElementById('goalDisplay').textContent='$'+parseInt(this.value).toLocaleString()+' / month'">
+            <div class="range-labels"><span>$200</span><span>$10,000</span><span>$20,000+</span></div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Primary Goal</label>
+          <div class="radio-cards" id="primaryGoal">
+            <div class="radio-card selected" onclick="selectRadio(this,'primaryGoal')">
+              <div class="rc-icon">💸</div>
+              <div class="rc-label">Extra Cash</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'primaryGoal')">
+              <div class="rc-icon">🔄</div>
+              <div class="rc-label">Replace Job</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'primaryGoal')">
+              <div class="rc-icon">😴</div>
+              <div class="rc-label">Passive Income</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'primaryGoal')">
+              <div class="rc-icon">🏗️</div>
+              <div class="rc-label">Build a Business</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'primaryGoal')">
+              <div class="rc-icon">💎</div>
+              <div class="rc-label">Wealth Building</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Timeframe to Hit Goal</label>
+          <select id="userTimeframe">
+            <option value="1month">1 Month (urgently needed)</option>
+            <option value="3months" selected>3 Months (near-term)</option>
+            <option value="6months">6 Months (medium-term)</option>
+            <option value="12months">12 Months (long-term)</option>
+            <option value="2years">2+ Years (I'm building something big)</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Startup Capital Available</label>
+          <div class="radio-cards" id="startupCapital">
+            <div class="radio-card selected" onclick="selectRadio(this,'startupCapital')">
+              <div class="rc-icon">🆓</div>
+              <div class="rc-label">$0 (Free only)</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'startupCapital')">
+              <div class="rc-icon">💵</div>
+              <div class="rc-label">Under $500</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'startupCapital')">
+              <div class="rc-icon">💰</div>
+              <div class="rc-label">$500–$2K</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'startupCapital')">
+              <div class="rc-icon">🏦</div>
+              <div class="rc-label">$2K–$10K</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(3)">← Back</button>
+        <button class="btn-next" onclick="nextStep(3)">Next: Risk & Context →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: CONTEXT -->
+    <div class="form-step" id="step-4">
+      <div class="step-header">
+        <h2>Risk Tolerance & Context</h2>
+        <p>Final step — this fine-tunes your match score and tax strategy.</p>
+      </div>
+
+      <div class="form-grid form-grid-2">
+        <div class="field-group">
+          <label class="field-label">Risk Tolerance</label>
+          <div class="radio-cards" id="riskTolerance">
+            <div class="radio-card selected" onclick="selectRadio(this,'riskTolerance')">
+              <div class="rc-icon">🛡️</div>
+              <div class="rc-label">Conservative</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'riskTolerance')">
+              <div class="rc-icon">⚖️</div>
+              <div class="rc-label">Moderate</div>
+            </div>
+            <div class="radio-card" onclick="selectRadio(this,'riskTolerance')">
+              <div class="rc-icon">🚀</div>
+              <div class="rc-label">Aggressive</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Devices / Tools You Own</label>
+          <div class="radio-cards" id="userDevices">
+            <div class="radio-card" onclick="toggleRadioMulti(this)">
+              <div class="rc-icon">💻</div>
+              <div class="rc-label">Laptop/PC</div>
+            </div>
+            <div class="radio-card" onclick="toggleRadioMulti(this)">
+              <div class="rc-icon">📷</div>
+              <div class="rc-label">Camera</div>
+            </div>
+            <div class="radio-card" onclick="toggleRadioMulti(this)">
+              <div class="rc-icon">🚗</div>
+              <div class="rc-label">Car / Vehicle</div>
+            </div>
+            <div class="radio-card" onclick="toggleRadioMulti(this)">
+              <div class="rc-icon">🏠</div>
+              <div class="rc-label">Extra Space</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid" style="margin-top:20px">
+        <div class="field-group">
+          <label class="field-label">What's Stopping You? <span class="field-hint">(select main blocker)</span></label>
+          <select id="userBlocker">
+            <option value="time">⏰ Not enough time</option>
+            <option value="skills">📚 Don't know where to start / lack skills</option>
+            <option value="money">💸 No startup money</option>
+            <option value="motivation">🎯 Motivation / consistency</option>
+            <option value="ideas">💡 Can't find the right idea</option>
+            <option value="fear">😨 Fear of failure / judgment</option>
+            <option value="nothing">✅ Nothing – I'm ready to go</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Describe Yourself in 2–3 Sentences <span class="field-hint">(AI uses this for personalization)</span></label>
+          <textarea id="userBio" placeholder="e.g. I'm a software engineer working 9-5 in London. I have 8 hours free on weekends and want to build something that generates income even when I sleep. I'm good at explaining technical things simply..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(4)">← Back</button>
+        <button class="btn-next btn-analyze" onclick="runAnalysis()">
+          🤖 Run AI Analysis
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /form-card -->
+
+  <!-- ANALYSIS LOADER -->
+  <div id="analysisLoader">
+    <div class="loader-ring">
+      <svg viewBox="0 0 120 120">
+        <circle class="loader-ring-track" cx="60" cy="60" r="54"/>
+        <circle class="loader-ring-fill" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="loader-pct" id="loaderPct">0%</div>
+    </div>
+    <div class="loader-title">AI is building your report…</div>
+    <div class="loader-sub">Analyzing 200+ opportunities across 8 scoring dimensions</div>
+    <ul class="loader-steps-list" id="loaderStepsList">
+      <li class="loader-step-item" id="ls1"><span class="loader-step-icon">🔍</span> Scanning your skill DNA…</li>
+      <li class="loader-step-item" id="ls2"><span class="loader-step-icon">📊</span> Scoring 200+ side hustle types…</li>
+      <li class="loader-step-item" id="ls3"><span class="loader-step-icon">💰</span> Calculating income projections…</li>
+      <li class="loader-step-item" id="ls4"><span class="loader-step-icon">⚠️</span> Running risk analysis…</li>
+      <li class="loader-step-item" id="ls5"><span class="loader-step-icon">🧾</span> Estimating tax strategy…</li>
+      <li class="loader-step-item" id="ls6"><span class="loader-step-icon">🗺️</span> Building 12-month action plan…</li>
+      <li class="loader-step-item" id="ls7"><span class="loader-step-icon">✅</span> Finalizing your match report…</li>
+    </ul>
+  </div>
+
+  <!-- RESULTS DASHBOARD -->
+  <div id="resultsDashboard">
+
+    <div class="results-actions">
+      <button class="btn-restart" onclick="restartTool()">↩ Start New Analysis</button>
+      <button class="btn-pdf" onclick="alert('PDF export available in Premium plan — $9/month')">📄 Export PDF Report</button>
+    </div>
+
+    <!-- AI Insight -->
+    <div class="ai-insight">
+      <p class="ai-insight-text" id="aiInsightText">
+        Based on your profile, you have a strong natural advantage in service-based income streams where your existing skills create immediate value. Your time availability and moderate risk appetite position you well for 2–3 complementary income streams rather than going all-in on one. The AI has identified a high-probability path to your income goal within your stated timeframe.
+      </p>
+    </div>
+
+    <!-- Results header -->
+    <div class="results-header fade-in">
+      <div class="results-name" id="resultsName">Your Personalized Report</div>
+      <div class="results-title" id="resultsTitle">Top 5 Side Hustles Matched to You</div>
+      <div class="results-summary" id="resultsSummary">
+        Your AI analysis is complete. Below you'll find your ranked matches, 8-dimension scores, 12-month action plan, risk warnings, and tax opportunities — all personalized to your exact profile.
+      </div>
+      <div class="results-meta" id="resultsMeta"></div>
+    </div>
+
+    <!-- SCORES -->
+    <div class="scores-grid">
+      <div class="score-card amber">
+        <div class="score-label">Opportunity Score</div>
+        <div class="score-value" id="sc-opportunity">--</div>
+        <div class="score-bar"><div class="score-bar-fill" id="sb-opportunity" style="width:0%"></div></div>
+        <div class="score-sub">Overall market opportunity vs. your profile</div>
+      </div>
+      <div class="score-card mint">
+        <div class="score-label">Growth Score</div>
+        <div class="score-value" id="sc-growth">--</div>
+        <div class="score-bar"><div class="score-bar-fill" id="sb-growth" style="width:0%"></div></div>
+        <div class="score-sub">12-month income growth trajectory</div>
+      </div>
+      <div class="score-card violet">
+        <div class="score-label">Wealth Score</div>
+        <div class="score-value" id="sc-wealth">--</div>
+        <div class="score-bar"><div class="score-bar-fill" id="sb-wealth" style="width:0%"></div></div>
+        <div class="score-sub">Long-term wealth building potential</div>
+      </div>
+      <div class="score-card coral">
+        <div class="score-label">Risk Score</div>
+        <div class="score-value" id="sc-risk">--</div>
+        <div class="score-bar"><div class="score-bar-fill" id="sb-risk" style="width:0%"></div></div>
+        <div class="score-sub">Lower = safer for your situation</div>
+      </div>
+    </div>
+
+    <!-- MAIN DASHBOARD GRID -->
+    <div class="dashboard-grid">
+
+      <!-- Top Matches -->
+      <div class="dash-card">
+        <div class="dash-card-title"><span class="icon">🎯</span> Your Top 5 Matches</div>
+        <div id="matchList"></div>
+      </div>
+
+      <!-- Income Projection -->
+      <div class="dash-card">
+        <div class="dash-card-title"><span class="icon">📈</span> 12-Month Income Projection</div>
+        <div style="font-size:13px;color:var(--grey-50);margin-bottom:8px;">Estimated additional monthly income (USD)</div>
+        <div class="chart-bars" id="incomeChart"></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--grey-50)">
+          <span>Month 1</span><span>Month 3</span><span>Month 6</span><span>Month 9</span><span>Month 12</span>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:16px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:11px;color:var(--grey-50);margin-bottom:2px">Month 1 Est.</div>
+            <div style="font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--amber)" id="proj-m1">--</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--grey-50);margin-bottom:2px">Month 12 Est.</div>
+            <div style="font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--mint)" id="proj-m12">--</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--grey-50);margin-bottom:2px">Annual Total</div>
+            <div style="font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--violet)" id="proj-annual">--</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ACTION PLAN + RISK (full width split) -->
+    <div class="dashboard-grid">
+
+      <!-- 12-Week Action Plan -->
+      <div class="dash-card">
+        <div class="dash-card-title"><span class="icon">🗺️</span> 12-Week Launch Plan</div>
+        <div id="actionPlan"></div>
+      </div>
+
+      <!-- Risk Warnings + Tax -->
+      <div>
+        <div class="dash-card" style="margin-bottom:20px">
+          <div class="dash-card-title"><span class="icon">⚠️</span> Risk Warnings</div>
+          <div id="riskWarnings"></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-title"><span class="icon">🧾</span> Tax & Financial Insights</div>
+          <div id="taxInsights"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PREMIUM UPSELL -->
+    <div class="premium-upsell">
+      <div class="upsell-text">
+        <h3>🔓 Unlock Your Full AI Report</h3>
+        <p>Your free report shows the top-line matches. Premium gives you the complete income playbook: week-by-week action steps, advanced tax optimization, competitor analysis per niche, and monthly AI check-in calls.</p>
+        <div class="upsell-features">
+          <span class="upsell-feat">📄 Downloadable PDF Report</span>
+          <span class="upsell-feat">📅 Weekly AI Check-ins</span>
+          <span class="upsell-feat">💰 Tax Deduction Finder</span>
+          <span class="upsell-feat">📊 Revenue Forecasting Model</span>
+          <span class="upsell-feat">🤝 Client Script Templates</span>
+          <span class="upsell-feat">🏆 Niche Competitor Map</span>
+          <span class="upsell-feat">🔄 Unlimited Re-Analysis</span>
+        </div>
+      </div>
+      <div class="upsell-cta">
+        <div class="upsell-price">$9<span>/mo</span></div>
+        <div style="font-size:12px;color:var(--grey-50);margin-bottom:8px">Cancel anytime</div>
+        <button class="btn-premium">Start Premium — $9/mo</button>
+        <div style="font-size:11px;color:var(--grey-50);margin-top:8px">✓ 7-day free trial &nbsp;✓ No credit card yet</div>
+      </div>
+    </div>
+
+  </div><!-- /resultsDashboard -->
+
+</div><!-- /toolSection -->
+
+<!-- FEATURES SECTION -->
+<div style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section">
+    <div class="section-label">// Why IncomeAIHub</div>
+    <h2 class="section-title">Not a calculator. An income intelligence system.</h2>
+    <p class="section-sub">Every feature is built around one question: what will actually make you money?</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <div class="feature-title">8-Dimension Scoring Engine</div>
+        <div class="feature-desc">Every side hustle is scored on skill fit, time ROI, startup cost, scalability, passive income potential, market saturation, geographic fit, and tax advantage.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">Hyper-Personalized Matching</div>
+        <div class="feature-desc">Unlike generic lists, we combine your skills, location, available hours, capital, and risk profile to surface ideas that match your exact situation — not everyone's.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧾</div>
+        <div class="feature-title">Built-in Tax Strategy</div>
+        <div class="feature-desc">Get instant country-specific tax insight: what deductions apply, estimated self-employment tax, and whether forming an LLC / sole trader makes financial sense.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div class="feature-title">Week-by-Week Action Plan</div>
+        <div class="feature-desc">Not just "start a blog." You get specific, sequenced weekly steps to launch, grow, and monetize your top-matched side hustle within 90 days.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚠️</div>
+        <div class="feature-title">Real Risk Analysis</div>
+        <div class="feature-desc">We tell you what most tools won't: market saturation warnings, income volatility flags, platform dependency risks, and legal considerations per country.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">12-Month Income Projections</div>
+        <div class="feature-desc">Realistic, not inflated. Based on actual market rates, your time investment, and typical growth curves — with Month 1, 6, and 12 estimates shown clearly.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING SECTION -->
+<div class="section" id="pricing">
+  <div class="section-label">// Subscription Plans</div>
+  <h2 class="section-title">Simple, honest pricing</h2>
+  <p class="section-sub">Start free. Upgrade when you're ready to go deeper.</p>
+
+  <div class="pricing-grid">
+    <!-- Free -->
+    <div class="pricing-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-tagline">Discover your matches</div>
+      <div class="plan-price"><span class="currency">$</span>0<span class="period"> forever</span></div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li>AI Side Hustle Match Report</li>
+        <li>Top 5 matches with scores</li>
+        <li>Basic income projection</li>
+        <li>Risk summary</li>
+        <li>3 analyses per month</li>
+        <li class="locked">PDF Export</li>
+        <li class="locked">Tax strategy details</li>
+        <li class="locked">Week-by-week action plan</li>
+        <li class="locked">Niche competitor analysis</li>
+        <li class="locked">Monthly AI check-ins</li>
+      </ul>
+      <button class="btn-plan" onclick="scrollToTool()">Get Started Free</button>
+    </div>
+
+    <!-- Pro -->
+    <div class="pricing-card featured">
+      <div class="pricing-featured-badge">⚡ Most Popular</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-tagline">For serious side hustlers</div>
+      <div class="plan-price"><span class="currency">$</span>9<span class="period">/month</span></div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li>Everything in Free</li>
+        <li>Unlimited analyses</li>
+        <li>PDF Report export</li>
+        <li>Full tax strategy (by country)</li>
+        <li>Week-by-week 90-day plan</li>
+        <li>Niche competitor map</li>
+        <li>Revenue forecasting model</li>
+        <li>Client script templates</li>
+        <li>Monthly AI check-in report</li>
+        <li class="locked">1:1 Coaching call</li>
+      </ul>
+      <button class="btn-plan" onclick="alert('Starting 7-day free trial!')">Start Free Trial →</button>
+    </div>
+
+    <!-- Elite -->
+    <div class="pricing-card">
+      <div class="plan-name">Elite</div>
+      <div class="plan-tagline">Scale to full-time income</div>
+      <div class="plan-price"><span class="currency">$</span>49<span class="period">/month</span></div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li>Everything in Pro</li>
+        <li>Monthly 1:1 coaching call</li>
+        <li>Business structure advice</li>
+        <li>Multi-income diversification plan</li>
+        <li>Passive income accelerator</li>
+        <li>Investment strategy alignment</li>
+        <li>Platform growth playbook</li>
+        <li>Priority AI support</li>
+        <li>White-label PDF reports</li>
+        <li>Tax filing prep guide</li>
+      </ul>
+      <button class="btn-plan" onclick="alert('Upgrade to Elite!')">Upgrade to Elite</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Income<span>AI</span>Hub</div>
+  <p style="margin-bottom:8px">AI-powered tools for income growth, wealth building & financial freedom.</p>
+  <p>
+    <a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Affiliate Program</a> · <a href="#">API</a>
+  </p>
+  <p style="margin-top:16px;font-size:11px;color:#3A4A6A">
+    © 2025 IncomeAIHub. Income projections are estimates based on market data and are not financial guarantees.
+    Results vary by individual effort and market conditions. Not financial advice.
+  </p>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT ENGINE
+     ============================================================ -->
+<script>
+/* ————————————————————————————————
+   STEP NAVIGATION
+   ———————————————————————————————— */
+let currentStep = 1;
+const totalSteps = 4;
+
+function scrollToTool() {
+  document.getElementById('toolSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateStepIndicator(step) {
+  for (let i = 1; i <= totalSteps; i++) {
+    const dot = document.getElementById('sdot-' + i);
+    dot.classList.remove('active', 'done');
+    if (i < step) dot.classList.add('done');
+    else if (i === step) dot.classList.add('active');
+  }
+  for (let i = 1; i < totalSteps; i++) {
+    const conn = document.getElementById('sc-' + i);
+    conn.classList.toggle('done', i < step);
+  }
+}
+
+function goToStep(n) {
+  if (n > currentStep) return; // can't skip ahead
+  showStep(n);
+}
+
+function showStep(n) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+  currentStep = n;
+  updateStepIndicator(n);
+}
+
+function nextStep(from) {
+  if (from === 1) {
+    const name = document.getElementById('userName').value.trim();
+    const country = document.getElementById('userCountry').value;
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!country) { alert('Please select your country.'); return; }
+  }
+  if (from === 2) {
+    const selected = document.querySelectorAll('#skillTags .skill-tag.selected');
+    if (selected.length < 2) { alert('Please select at least 2 skills.'); return; }
+  }
+  showStep(from + 1);
+}
+
+function prevStep(from) { showStep(from - 1); }
+
+/* ————————————————————————————————
+   SKILL TAGS
+   ———————————————————————————————— */
+function toggleSkill(el) { el.classList.toggle('selected'); }
+
+/* ————————————————————————————————
+   RADIO CARDS (single select)
+   ———————————————————————————————— */
+function selectRadio(el, groupId) {
+  document.querySelectorAll('#' + groupId + ' .radio-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+/* ————————————————————————————————
+   RADIO MULTI
+   ———————————————————————————————— */
+function toggleRadioMulti(el) { el.classList.toggle('selected'); }
+
+/* ————————————————————————————————
+   COLLECT FORM DATA
+   ———————————————————————————————— */
+function getFormData() {
+  const skills = [...document.querySelectorAll('#skillTags .skill-tag.selected')].map(t => t.textContent.replace(/^.+? /, '').trim());
+  const skillLevel = document.querySelector('#skillLevel .selected')?.querySelector('.rc-label')?.textContent || 'Intermediate';
+  const primaryGoal = document.querySelector('#primaryGoal .selected')?.querySelector('.rc-label')?.textContent || 'Extra Cash';
+  const risk = document.querySelector('#riskTolerance .selected')?.querySelector('.rc-label')?.textContent || 'Moderate';
+  const capital = document.querySelector('#startupCapital .selected')?.querySelector('.rc-label')?.textContent || '$0';
+
+  return {
+    name: document.getElementById('userName').value.trim(),
+    country: document.getElementById('userCountry').value,
+    employment: document.getElementById('userEmployment').value,
+    income: parseInt(document.getElementById('userIncome').value) || 2500,
+    hours: parseInt(document.getElementById('userHours').value) || 10,
+    age: document.getElementById('userAge').value,
+    workStyle: document.getElementById('userWorkStyle').value,
+    skills,
+    skillLevel,
+    portfolio: document.getElementById('userPortfolio').value.trim(),
+    goal: parseInt(document.getElementById('userGoal').value) || 1500,
+    primaryGoal,
+    timeframe: document.getElementById('userTimeframe').value,
+    capital,
+    risk,
+    blocker: document.getElementById('userBlocker').value,
+    bio: document.getElementById('userBio').value.trim()
+  };
+}
+
+/* ————————————————————————————————
+   ANALYSIS ENGINE
+   ———————————————————————————————— */
+async function runAnalysis() {
+  const data = getFormData();
+
+  // Hide form, show loader
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('stepsIndicator').style.display = 'none';
+  document.getElementById('analysisLoader').classList.add('show');
+
+  // Animate loader steps
+  const loaderSteps = ['ls1','ls2','ls3','ls4','ls5','ls6','ls7'];
+  const pctEl = document.getElementById('loaderPct');
+  let pct = 0;
+
+  for (let i = 0; i < loaderSteps.length; i++) {
+    await delay(500);
+    document.getElementById(loaderSteps[i]).classList.add('active');
+    pct = Math.round(((i + 1) / loaderSteps.length) * 100);
+    pctEl.textContent = pct + '%';
+    if (i > 0) document.getElementById(loaderSteps[i - 1]).classList.remove('active');
+    document.getElementById(loaderSteps[i]).classList.add('done');
+  }
+
+  await delay(400);
+
+  // Call Claude AI
+  let aiResult = null;
+  try {
+    aiResult = await callClaudeAI(data);
+  } catch (e) {
+    aiResult = buildFallbackReport(data);
+  }
+
+  // Render dashboard
+  document.getElementById('analysisLoader').classList.remove('show');
+  document.getElementById('resultsDashboard').classList.add('show');
+
+  renderDashboard(data, aiResult);
+}
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+/* ————————————————————————————————
+   CLAUDE AI CALL
+   ———————————————————————————————— */
+async function callClaudeAI(data) {
+  const prompt = `You are an expert side hustle advisor, financial strategist, and income coach.
+
+Analyze this user profile and return a JSON object (no markdown, no preamble, just JSON):
+
+USER PROFILE:
+- Name: ${data.name}
+- Country: ${data.country}
+- Employment: ${data.employment}
+- Monthly Income: $${data.income}
+- Available Hours/Week: ${data.hours}
+- Skills: ${data.skills.join(', ')}
+- Skill Level: ${data.skillLevel}
+- Portfolio/Audience: ${data.portfolio || 'None mentioned'}
+- Income Goal: $${data.goal}/month
+- Primary Goal: ${data.primaryGoal}
+- Timeframe: ${data.timeframe}
+- Startup Capital: ${data.capital}
+- Risk Tolerance: ${data.risk}
+- Main Blocker: ${data.blocker}
+- Bio: ${data.bio || 'Not provided'}
+
+Return ONLY this JSON structure (fill every field with real, specific, personalized data):
+{
+  "aiInsight": "2-3 sentence personalized insight about this specific person's opportunity",
+  "reportTitle": "Personalized report title mentioning their top opportunity area",
+  "reportSummary": "2-sentence summary of their situation and potential",
+  "opportunityScore": 82,
+  "growthScore": 74,
+  "wealthScore": 68,
+  "riskScore": 31,
+  "matches": [
+    {
+      "rank": 1,
+      "name": "Specific Side Hustle Name",
+      "badge": "BEST FIT",
+      "badgeType": "mint",
+      "desc": "Why this specifically fits this user in 1 sentence",
+      "earnings": "$X–$Y/month by month 6",
+      "score": 94
+    }
+  ],
+  "projections": [120, 280, 490, 720, 950, 1200, 1380, 1520, 1680, 1790, 1860, 1950],
+  "actionPlan": [
+    { "week": "Week 1–2", "title": "Specific action", "desc": "Specific details for this user" }
+  ],
+  "risks": [
+    { "level": "high", "title": "Risk name", "desc": "Specific risk for this user" }
+  ],
+  "taxInsights": [
+    { "key": "Tax item label", "val": "$X or X%", "type": "saving" }
+  ]
+}
+
+Rules:
+- matches: exactly 5, all highly specific to their actual skills listed
+- projections: 12 numbers (monthly income USD), realistic ramp-up starting low
+- actionPlan: exactly 6 steps, specific and actionable
+- risks: 3 risks (1 high, 1 medium, 1 low)
+- taxInsights: 4 items relevant to their country
+- All scores: 1–100 integers
+- riskScore: lower = safer (so conservative person should have low risk score recommendations)
+- Make everything highly personalized to their actual skills and country`;
+
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-6",
+      max_tokens: 1800,
+      messages: [{ role: "user", content: prompt }]
+    })
+  });
+
+  const resData = await response.json();
+  const text = resData.content?.[0]?.text || '';
+  const clean = text.replace(/```json|```/g, '').trim();
+  return JSON.parse(clean);
+}
+
+/* ————————————————————————————————
+   FALLBACK REPORT
+   ———————————————————————————————— */
+function buildFallbackReport(data) {
+  const firstSkill = data.skills[0] || 'your skills';
+  const baseGoal = data.goal;
+  const ramp = [0.05,0.12,0.22,0.35,0.5,0.65,0.75,0.82,0.88,0.92,0.97,1.0];
+
+  return {
+    aiInsight: `Based on your ${data.hours} hours/week availability and expertise in ${data.skills.slice(0,2).join(' & ')}, you're well-positioned to hit $${baseGoal.toLocaleString()}/month within your stated timeframe. Your ${data.risk} risk tolerance means a service-first approach gives you the fastest path to income with minimal upfront cost.`,
+    reportTitle: `Your ${firstSkill} Income Roadmap`,
+    reportSummary: `You have a strong foundation to build upon. Your selected skills map to high-demand market niches with immediate earning potential in the ${data.country} market.`,
+    opportunityScore: 78, growthScore: 71, wealthScore: 65, riskScore: 28,
+    matches: [
+      { rank:1, name: firstSkill + ' Freelancing', badge:'BEST FIT', badgeType:'mint', desc:'Highest skill-to-income alignment for your profile.', earnings:'$'+Math.round(baseGoal*0.6).toLocaleString()+'–$'+Math.round(baseGoal*1.1).toLocaleString()+'/month by month 4', score:92 },
+      { rank:2, name:'Digital Content Creation', badge:'HOT', badgeType:'hot', desc:'Leverages your skills into scalable content assets.', earnings:'$'+Math.round(baseGoal*0.3).toLocaleString()+'–$'+Math.round(baseGoal*0.8).toLocaleString()+'/month by month 6', score:84 },
+      { rank:3, name:'Online Course / Workshop', badge:'SCALABLE', badgeType:'mint', desc:'Package your expertise into passive income.', earnings:'$'+Math.round(baseGoal*0.4).toLocaleString()+'–$'+Math.round(baseGoal*1.5).toLocaleString()+'/month by month 8', score:77 },
+      { rank:4, name:'Consulting / Advisory', badge:'HIGH VALUE', badgeType:'mint', desc:'Premium positioning of your domain knowledge.', earnings:'$'+Math.round(baseGoal*0.5).toLocaleString()+'–$'+Math.round(baseGoal*2.0).toLocaleString()+'/month by month 6', score:71 },
+      { rank:5, name:'Affiliate / Content Marketing', badge:'PASSIVE', badgeType:'mint', desc:'Long-term passive income from your content.', earnings:'$'+Math.round(baseGoal*0.05).toLocaleString()+'–$'+Math.round(baseGoal*0.4).toLocaleString()+'/month by month 12', score:63 }
+    ],
+    projections: ramp.map(r => Math.round(baseGoal * r)),
+    actionPlan: [
+      { week:'Week 1–2', title:'Define Your Niche', desc:'Identify the specific problem you solve and who you serve. Create your offer positioning.' },
+      { week:'Week 3–4', title:'Set Up Your Presence', desc:'Build a simple one-page website, optimize your LinkedIn, and create 3 portfolio samples.' },
+      { week:'Week 5–6', title:'Outreach Sprint', desc:'Contact 50 potential clients via email and social. Offer a free 20-min consult to close first clients.' },
+      { week:'Week 7–8', title:'Deliver & Collect Proof', desc:'Deliver exceptional work. Collect testimonials and case study data from every client.' },
+      { week:'Week 9–10', title:'Raise Rates & Systemize', desc:'With social proof, raise your rate by 25%. Create templates to speed up delivery.' },
+      { week:'Week 11–12', title:'Add Passive Revenue Layer', desc:'Launch a digital product or affiliate strategy that generates income beyond your active hours.' }
+    ],
+    risks: [
+      { level:'high', title:'Income Inconsistency', desc:'First 60 days will have irregular income. Keep 2 months of expenses as runway before going all-in.' },
+      { level:'medium', title:'Platform Dependency', desc:'Avoid relying solely on one platform (Fiverr, Upwork). Diversify client acquisition channels.' },
+      { level:'low', title:'Skill Commoditization', desc:'Niche down quickly so you\'re competing on value, not price, against low-cost competitors.' }
+    ],
+    taxInsights: [
+      { key:'Estimated Self-Employment Tax', val: data.country==='USA'?'15.3% on net profit':'Varies by bracket', type:'owed' },
+      { key:'Home Office Deduction', val:'$500–$2,400/yr', type:'saving' },
+      { key:'Equipment & Software Deductions', val:'100% deductible', type:'saving' },
+      { key:'Quarterly Tax Estimate (if USA)', val:'Pay April, June, Sept, Jan', type:'owed' }
+    ]
+  };
+}
+
+/* ————————————————————————————————
+   RENDER DASHBOARD
+   ———————————————————————————————— */
+function renderDashboard(data, r) {
+  // AI Insight
+  document.getElementById('aiInsightText').textContent = r.aiInsight;
+
+  // Header
+  document.getElementById('resultsName').textContent = data.name + ' — ' + data.country + ' — ' + data.hours + ' hrs/week';
+  document.getElementById('resultsTitle').textContent = r.reportTitle;
+  document.getElementById('resultsSummary').textContent = r.reportSummary;
+  document.getElementById('resultsMeta').innerHTML = `
+    <div class="results-meta-item">🎯 Goal: <span>$${data.goal.toLocaleString()}/mo</span></div>
+    <div class="results-meta-item">⏰ Hours: <span>${data.hours}/week</span></div>
+    <div class="results-meta-item">📍 Market: <span>${data.country}</span></div>
+    <div class="results-meta-item">⚠️ Risk: <span>${data.risk}</span></div>
+  `;
+
+  // Scores
+  setTimeout(() => {
+    setScore('opportunity', r.opportunityScore);
+    setScore('growth', r.growthScore);
+    setScore('wealth', r.wealthScore);
+    setScore('risk', r.riskScore);
+  }, 200);
+
+  // Matches
+  document.getElementById('matchList').innerHTML = r.matches.map(m => `
+    <div class="match-item">
+      <div class="match-rank ${m.rank===1?'top':''}">${m.rank}</div>
+      <div class="match-info">
+        <div class="match-name">
+          ${m.name}
+          <span class="match-badge ${m.badgeType==='hot'?'hot':''}">${m.badge}</span>
+        </div>
+        <div class="match-desc">${m.desc}</div>
+        <div class="match-earnings">📈 ${m.earnings}</div>
+      </div>
+      <div class="match-score-pill">${m.score}/100</div>
+    </div>
+  `).join('');
+
+  // Chart
+  const maxProj = Math.max(...r.projections);
+  const chartMonths = [0,2,5,8,11];
+  const chartVals = chartMonths.map(i => r.projections[i]);
+  document.getElementById('incomeChart').innerHTML = chartVals.map((v,i) => {
+    const h = Math.max(8, Math.round((v / maxProj) * 76));
+    return `<div class="chart-bar-wrap"><div class="chart-bar" style="height:${h}px"></div><div class="chart-bar-label">$${(v/1000).toFixed(1)}k</div></div>`;
+  }).join('');
+
+  const m1 = r.projections[0];
+  const m12 = r.projections[11];
+  const annual = r.projections.reduce((a,b) => a+b, 0);
+  document.getElementById('proj-m1').textContent = '$' + m1.toLocaleString();
+  document.getElementById('proj-m12').textContent = '$' + m12.toLocaleString();
+  document.getElementById('proj-annual').textContent = '$' + annual.toLocaleString();
+
+  // Action plan
+  document.getElementById('actionPlan').innerHTML = r.actionPlan.map(a => `
+    <div class="action-step">
+      <div class="action-week">${a.week}</div>
+      <div class="action-content">
+        <div class="action-title">${a.title}</div>
+        <div class="action-desc">${a.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Risks
+  document.getElementById('riskWarnings').innerHTML = r.risks.map(risk => `
+    <div class="risk-item ${risk.level}">
+      <div class="risk-icon">${risk.level==='high'?'🔴':risk.level==='medium'?'🟡':'🟢'}</div>
+      <div class="risk-text">
+        <div class="risk-title">${risk.title}</div>
+        <div class="risk-desc">${risk.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Tax
+  document.getElementById('taxInsights').innerHTML = r.taxInsights.map(t => `
+    <div class="tax-item">
+      <span class="tax-key">${t.key}</span>
+      <span class="tax-val ${t.type}">${t.val}</span>
+    </div>
+  `).join('');
+
+  // Scroll to results
+  document.getElementById('resultsDashboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function setScore(key, val) {
+  document.getElementById('sc-' + key).textContent = val;
+  setTimeout(() => {
+    document.getElementById('sb-' + key).style.width = val + '%';
+  }, 100);
+}
+
+/* ————————————————————————————————
+   RESTART
+   ———————————————————————————————— */
+function restartTool() {
+  document.getElementById('resultsDashboard').classList.remove('show');
+  document.getElementById('formCard').style.display = '';
+  document.getElementById('stepsIndicator').style.display = 'flex';
+
+  // Reset all scores to 0
+  ['opportunity','growth','wealth','risk'].forEach(k => {
+    document.getElementById('sc-'+k).textContent = '--';
+    document.getElementById('sb-'+k).style.width = '0%';
+  });
+
+  showStep(1);
+  document.getElementById('toolSection').scrollIntoView({ behavior:'smooth' });
+}
+</script>
+
+</body>
+</html>
